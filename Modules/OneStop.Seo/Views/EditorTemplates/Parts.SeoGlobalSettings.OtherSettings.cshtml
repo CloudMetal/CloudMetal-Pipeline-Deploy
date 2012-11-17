@@ -1,0 +1,15 @@
+﻿@model Onestop.Seo.Models.SeoGlobalSettingsPart
+
+<h2>@T("Other Settings")</h2>
+<fieldset>
+    <legend>@T("Automatically Generated Values")</legend>
+    <ol>
+        <li>
+            @Html.EditorFor(m => m.EnableCanonicalUrls)
+            <label for="@Html.FieldIdFor(m => m.EnableCanonicalUrls)" class="forcheckbox">@T("Enable Canonical URLs")</label>
+            @Html.ValidationMessageFor(m => m.EnableCanonicalUrls)
+        </li>
+    </ol>
+</fieldset>
+
+@Display.TokenHint()

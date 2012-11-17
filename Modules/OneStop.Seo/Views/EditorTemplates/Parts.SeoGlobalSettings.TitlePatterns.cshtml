@@ -1,0 +1,34 @@
+﻿@model Onestop.Seo.Models.SeoGlobalSettingsPart
+           
+<fieldset>
+    <legend>@T("SEO Content Type Title Patterns")</legend>
+    @if (!Model.SeoContentTypes.Any()) {
+        @T("No content type has SeoPart attached, therefore type-specific title patterns can't be set.");
+    }
+    else {
+        <ol>
+            @{ var i = 0; }
+            @foreach (var type in Model.SeoContentTypes) {
+                <li>
+                    @Html.Label("TitlePatternsViewDictionary[" + i + "].Value", type.DisplayName)
+                    @Html.Hidden("TitlePatternsViewDictionary[" + i + "].Key", type.Name)
+                    @Html.TextBox("TitlePatternsViewDictionary[" + i + "].Value", Model.TitlePatternsViewDictionary[type.Name], new { @class = "text large tokenized" })
+                </li>
+                i++;
+            }
+        </ol>
+    }
+</fieldset>
+
+<fieldset>
+    <legend>@T("Non-content Title Patterns")</legend>
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.SearchTitlePattern, T("Search"))
+            @Html.TextBoxFor(m => m.SearchTitlePattern, new { @class = "text large tokenized" })
+            @Html.ValidationMessageFor(m => m.SearchTitlePattern)
+        </li>
+    </ol>
+</fieldset>
+
+@Display.TokenHint()

@@ -1,0 +1,23 @@
+﻿@model Onestop.Seo.Models.SeoGlobalSettingsPart
+           
+<fieldset>
+    <legend>@T("SEO Content Type Description Patterns")</legend>
+    @if (!Model.SeoContentTypes.Any()) {
+        @T("No content type has SeoPart attached, therefore type-specific description patterns can't be set.");
+    }
+    else {
+        <ol>
+            @{ var i = 0; }
+            @foreach (var type in Model.SeoContentTypes) {
+                <li>
+                    @Html.Label("DescriptionPatternsViewDictionary[" + i + "].Value", type.DisplayName)
+                    @Html.Hidden("DescriptionPatternsViewDictionary[" + i + "].Key", type.Name)
+                    @Html.TextBox("DescriptionPatternsViewDictionary[" + i + "].Value", Model.DescriptionPatternsViewDictionary[type.Name], new {@class = "text large tokenized"})
+                </li>
+                i++;
+            }
+        </ol>
+    }
+</fieldset>
+
+@Display.TokenHint()

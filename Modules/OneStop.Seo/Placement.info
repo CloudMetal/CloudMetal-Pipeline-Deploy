@@ -1,0 +1,25 @@
+﻿<Placement>
+  <Place Parts_SeoGlobalSettings_Homepage_Edit="Content:1"
+         Parts_SeoGlobalSettings_TitlePatterns_Edit="Content:2"
+         Parts_SeoGlobalSettings_DescriptionPatterns_Edit="Content:3"
+         Parts_SeoGlobalSettings_KeywordsPatterns_Edit="Content:4"
+         Parts_SeoGlobalSettings_OtherSettings_Edit="Content:5"/>
+  <Match DisplayType="SeoSummaryAdmin-TitleRewriter">
+    <Place Parts_Seo_SeoSummaryAdmin_Edit="Content:9"
+           Parts_Seo_TitleOverride_SeoSummaryAdmin_Edit="Content:1"
+           Parts_Common_Body_Summary="-"
+           Parts_Title_SummaryAdmin="Header:5;Shape=Parts_Title_SeoSummaryAdmin" />
+  </Match>
+  <Match DisplayType="SeoSummaryAdmin-DescriptionRewriter">
+    <Place Parts_Seo_SeoSummaryAdmin_Edit="Content:9"
+           Parts_Seo_DescriptionOverride_SeoSummaryAdmin_Edit="Content:1"
+           Parts_Common_Body_Summary="-"
+           Parts_Title_SummaryAdmin="Header:5;Shape=Parts_Title_SeoSummaryAdmin" />
+  </Match>
+  <Match DisplayType="SeoSummaryAdmin-KeywordsRewriter">
+    <Place Parts_Seo_SeoSummaryAdmin_Edit="Content:9"
+           Parts_Seo_KeywordsOverride_SeoSummaryAdmin_Edit="Content:1"
+           Parts_Common_Body_Summary="-"
+           Parts_Title_SummaryAdmin="Header:5;Shape=Parts_Title_SeoSummaryAdmin" />
+  </Match>
+</Placement>

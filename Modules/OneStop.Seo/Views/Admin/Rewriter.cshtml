@@ -1,0 +1,46 @@
+﻿@using Orchard.Core.Contents.ViewModels;
+
+@{
+    Style.Require("OnestopSeo_Admin");
+    Script.Require("OnestopSeo_Admin").AtFoot();
+}
+
+<div id="onestop-seo-rewriter-container">
+    @using (Html.BeginFormAntiForgeryPost()) {
+        <fieldset class="bulk-actions">
+            <label for="orderResults" class="bulk-order">@T("Ordered by")</label>
+            <select id="orderResults" name="Options.OrderBy">
+                @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Created, T("recently created").ToString())
+                @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Modified, T("recently modified").ToString())
+                @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Published, T("recently published").ToString())
+            </select>
+            <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
+        </fieldset>
+        <fieldset class="bulk-actions">
+            <button type="submit" name="submit.SaveAll" class="button" value="yes please">@T("Save all on this page")</button>
+            <button type="submit" name="submit.ClearAll" class="button" value="yes please">@T("Clear all")</button>
+        </fieldset>
+        <fieldset class="onestop-seo-search-container">
+            @Html.TextBox("q", "", new { @class = "text" })
+            <button type="submit" name="submit.Search" class="button" value="yes please">@T("Search on this tab")</button>
+        </fieldset>
+        <fieldset class="contentItems bulk-items">
+            @Display(Model.ContentItems)
+        </fieldset>
+        @Display(Model.Pager)
+    }
+</div>
+
+@using (Script.Foot()) {
+    <script type="text/javascript">
+        // Including here for easy localization
+        $("button[name='submit.ClearAll']").click(function (e) {
+            if (confirm("@T("Do you really want to clear all overrides?")")) return;
+            e.preventDefault();
+        });
+
+        $(document).ready(function () {
+            $.onestopSeo.admin.init();
+        });
+    </script>
+}

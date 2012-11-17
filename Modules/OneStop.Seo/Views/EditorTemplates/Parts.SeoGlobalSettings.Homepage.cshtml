@@ -1,0 +1,26 @@
+﻿@model Onestop.Seo.Models.SeoGlobalSettingsPart
+           
+<h2>@T("Homepage Settings")</h2>
+<fieldset>
+    <legend>@T("Basic Settings")</legend>
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.HomeTitle, T("Home Title"))
+            @Html.TextBoxFor(m => m.HomeTitle, new { @class = "text large tokenized" })
+            @Html.ValidationMessageFor(m => m.HomeTitle)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.HomeDescription, T("Home Description"))
+            @Html.TextBoxFor(m => m.HomeDescription, new { @class = "text large tokenized" })
+            @Html.ValidationMessageFor(m => m.HomeDescription)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.HomeKeywords, T("Home Keywords"))
+            @Html.TextBoxFor(m => m.HomeKeywords, new { @class = "text large tokenized" })
+            @Html.ValidationMessageFor(m => m.HomeKeywords)
+            <span class="hint">@T("List keywords comma-separated.")</span>
+        </li>
+    </ol>
+</fieldset>
+
+@Display.TokenHint()

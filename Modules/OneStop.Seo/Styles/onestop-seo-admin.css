@@ -1,0 +1,55 @@
+﻿#onestop-seo-rewriter-container label.bulk-order
+{
+    text-transform: none;
+}
+
+.onestop-seo-search-container
+{
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.onestop-seo-rewrite-value
+{
+    width: 70%;
+}
+
+.onestop-seo-too-long
+{
+    color: #D84141;
+}
+
+.onestop-seo-override-controls
+{
+    display: inline-block;
+}
+
+.onestop-seo-override-indicators
+{
+    display: inline-block;
+    text-align: right;
+    width: 6em;
+}
+
+.onestop-seo-override-indicate-default, .onestop-seo-override-indicate-overridden
+{
+    display: none;
+}
+
+.onestop-seo-character-counter
+{
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    margin: 0 1em 0 0.2em;
+}
+
+.onestop-seo-override-submit-clear
+{
+    margin-right: 1em;
+}
+
+.onestop-seo-override-controls .onestop-seo-override-submit
+{
+    display: none;
+}

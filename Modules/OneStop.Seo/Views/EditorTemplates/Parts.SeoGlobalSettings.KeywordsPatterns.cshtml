@@ -1,0 +1,23 @@
+﻿@model Onestop.Seo.Models.SeoGlobalSettingsPart
+           
+<fieldset>
+    <legend>@T("SEO Content Type Keywords Patterns")</legend>
+    @if (!Model.SeoContentTypes.Any()) {
+        @T("No content type has SeoPart attached, therefore type-specific keywords patterns can't be set.");
+    }
+    else {
+        <ol>
+            @{ var i = 0; }
+            @foreach (var type in Model.SeoContentTypes) {
+                <li>
+                    @Html.Label("KeywordsPatternsViewDictionary[" + i + "].Value", type.DisplayName)
+                    @Html.Hidden("KeywordsPatternsViewDictionary[" + i + "].Key", type.Name)
+                    @Html.TextBox("KeywordsPatternsViewDictionary[" + i + "].Value", Model.KeywordsPatternsViewDictionary[type.Name], new {@class = "text large tokenized"})
+                </li>
+                i++;
+            }
+        </ol>
+    }
+</fieldset>
+
+@Display.TokenHint()

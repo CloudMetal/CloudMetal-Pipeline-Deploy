@@ -1,0 +1,10 @@
+﻿Name: Onestop SEO
+AntiForgery: enabled
+Author: Zoltán Lehóczky / Onestop Internet
+Website: http://onestopseo.codeplex.com
+Version: 1.0
+OrchardVersion: 1.6
+Description: Search Engine Optimization for Orchard content
+FeatureDescription: Search Engine Optimization for Orchard content
+Category: SEO
+Dependencies: Orchard.Tokens, Orchard.Alias, Orchard.jQuery, Orchard.Search, Title
