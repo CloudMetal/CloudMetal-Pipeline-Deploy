@@ -1,0 +1,20 @@
+﻿@using System.Web.Mvc;
+@{
+    string returnUrl = Context.Request.QueryString["ReturnUrl"] ?? Context.Request.RawUrl;
+}
+@{
+    Script.Require("FacebookConnect").AtHead();
+    Style.Require("FacebookConnect");
+}
+@if (!Model.IsAuthenticated)
+{
+    @Display(New.FacebookConnectNotAuthenticated(Permissions: Model.ContentPart.Permissions, ReturnUrl: returnUrl))
+}
+else if (Model.IsConnected)
+{
+    @Display(New.FacebookConnectAuthenticated(AuthenticatedFacebookUser: Model.AuthenticatedFacebookUser, IsAuthenticatedWithFacebookConnect: Model.IsAuthenticatedWithFacebookConnect, ReturnUrl: returnUrl))
+}
+else
+{
+    @Display(New.FacebookConnectAuthenticatedNotConnected(Permissions: Model.ContentPart.Permissions, ReturnUrl: returnUrl))
+}

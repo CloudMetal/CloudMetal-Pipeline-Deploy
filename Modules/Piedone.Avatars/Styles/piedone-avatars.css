@@ -1,0 +1,19 @@
+﻿.piedone-avatars.avatarbox
+{
+    display: inline-block;
+}
+
+    .piedone-avatars.avatar
+    {
+        width: 150px;
+    }
+    
+.piedone-avatars.profile-editor.avatarbox span
+{
+    vertical-align: top;
+}
+
+.piedone-avatars.profile-editor.avatar-editor .hint
+{
+    display: block;
+}

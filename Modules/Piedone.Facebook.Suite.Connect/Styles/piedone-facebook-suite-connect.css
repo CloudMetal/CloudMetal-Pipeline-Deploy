@@ -1,0 +1,42 @@
+﻿.piedone-facebook-suite-connect.connect-link,
+.piedone-facebook-suite-connect.sign-out-to-connect-with-facebook-link,
+.piedone-facebook-suite-connect.facebook-logout-link
+{
+    background: url("http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/FGFbc80dUKj.png") no-repeat left -188px;
+    display: inline-block;
+    outline: none;
+    padding: 0 0 0 27px;
+    height: 22px;
+    line-height: 22px;
+}
+
+.registration-chooser
+{
+    margin-bottom: 3em;
+}
+
+    .registration-chooser .button
+    {
+        display: block;
+        margin-bottom: 1em !important;
+        padding: 0.5em !important;
+    }
+
+/* User profile
+***************************************************************/
+.piedone-facebook-suite-connect.current-user-profile
+{
+    margin: 0 0 10px 0;
+}
+
+    .piedone-facebook-suite-connect.current-user-profile-picture
+    {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .piedone-facebook-suite-connect.current-user-name
+    {
+        display: block;
+        text-align: center;
+    }
